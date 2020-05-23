@@ -50,3 +50,5 @@ define("PATH", $app_path);
  * константа ведет на админку сайта '/admin'
  */
 define("ADMIN", PATH . '/admin');
+
+require_once ROOT . '/vendor/autoload.php'; //подключаем автозагрузчик композера - autoload.php
