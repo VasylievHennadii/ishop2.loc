@@ -3,7 +3,8 @@
 use ishop\App;
 
 require_once dirname(__DIR__) . '/config/init.php';
+require_once LIBS . '/functions.php'; //подключение файла со служебными функциями 
 
 new \ishop\App();
 
-var_dump(App::$app->getProperties());
+debug(App::$app->getProperties());
