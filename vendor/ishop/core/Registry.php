@@ -22,7 +22,7 @@ class Registry {
      * метод складывает свойства в контейнер в виде массива,
      *  ключ  $name, значение $value
      */
-    public static function setProperty($name, $value){
+    public function setProperty($name, $value){
         self::$properties[$name] = $value;
     }
 
