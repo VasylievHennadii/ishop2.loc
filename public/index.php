@@ -7,4 +7,4 @@ require_once LIBS . '/functions.php'; //подключение файла со �
 
 new \ishop\App();
 
-debug(App::$app->getProperties());
+throw new Exception('Страница не найдена!!!', 500);
