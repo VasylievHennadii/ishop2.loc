@@ -92,3 +92,35 @@
 ====================
 [2020-05-30 23:26:39] Текст ошибки: Страница не найдена!!! | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\public\index.php | Строка: 10
 ====================
+[2020-06-03 21:48:54] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 59
+====================
+[2020-06-03 21:49:00] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 59
+====================
+[2020-06-03 21:50:13] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 59
+====================
+[2020-06-03 21:50:31] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 59
+====================
+[2020-06-03 22:56:39] Текст ошибки: Контроллер app\controllers\PageNewController не найден | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 63
+====================
+[2020-06-03 22:57:46] Текст ошибки: Class 'app\controllers\PageNewController' not found | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 60
+====================
+[2020-06-03 22:58:11] Текст ошибки: Class 'app\controllers\PageController' not found | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 60
+====================
+[2020-06-03 22:59:33] Текст ошибки: Контроллер app\controllers\PageController не найден | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 63
+====================
+[2020-06-03 22:59:45] Текст ошибки: Контроллер app\controllers\PageController не найден | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 63
+====================
+[2020-06-03 23:06:40] Текст ошибки: Контроллер app\controllers\PageController не найден | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 68
+====================
+[2020-06-03 23:06:48] Текст ошибки: Контроллер app\controllers\MainController не найден | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 68
+====================
+[2020-06-03 23:08:57] Текст ошибки: Метод app\controllers\MainController::indexAction не найден | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 65
+====================
+[2020-06-03 23:10:53] Текст ошибки: Контроллер app\controllers\PageController не найден | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 68
+====================
+[2020-06-03 23:13:13] Текст ошибки: Метод app\controllers\PageController::indexAction не найден | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 65
+====================
+[2020-06-03 23:13:32] Текст ошибки: Метод app\controllers\PageController::indexAction не найден | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 65
+====================
+[2020-06-03 23:14:12] Текст ошибки: Метод app\controllers\PageController::indexAction не найден | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 65
+====================

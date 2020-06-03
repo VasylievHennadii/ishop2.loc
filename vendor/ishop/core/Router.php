@@ -2,6 +2,8 @@
 
 namespace ishop;
 
+use Exception;
+
 /**
  * Класс маршрутизатор
  *
@@ -45,23 +47,80 @@ class Router {
     }
 
     /**
+     * получаем запрос из класса App.
      * данный метод вызывает метод matchRoute() и проверяет $url адрес на соответствие в таблице маршрутов: 
      * true -> вызывает соответствующий контроллер, 
      * false-> вовращает ошибку 404
      */
     public static function dispatch($url){
         if(self::matchRoute($url)){
-            echo 'OK';
+           $controller = 'app\controllers\\' . self::$route['prefix'] . self::$route['controller'] . 'Controller';//такой вид строки 'app\controllers\pageController'
+
+           if(class_exists($controller)){
+                $controllerObject = new $controller(self::$route); //создаем объект контроллера и передаем в конструктор объекта все параметры $route
+                $action = self::lowerCamelCase(self::$route['action']) . 'Action';
+                if(method_exists($controllerObject, $action)){
+                    $controllerObject->$action();
+                }else{
+                    throw new Exception("Метод $controller::$action не найден", 404);
+                }
+            }else{
+                throw new Exception("Контроллер $controller не найден", 404);
+            }
         }else{
-            echo 'NO';
+           throw new Exception("Страница не найдена", 404);
         }
     }
 
     /**
-     * метод принимает $url адрес и ищет соответствие в таблице маршрутов
+     * метод принимает $url адрес и ищет соответствие в таблице маршрутов.
+     * возвращает true/false
+     * $pattern - шаблон регулярного выражения
      */
     public static function matchRoute($url){
-        return true;
+        foreach(self::$routes as $pattern => $route){
+            //сравниваем шаблон $pattern с $url и помещаем в $matches
+            if(preg_match("#{$pattern}#", $url, $matches)){
+                foreach($matches as $k => $v){
+                    if(is_string($k)){
+                        $route[$k] = $v;
+                    }
+                }
+                if(empty($route['action'])){
+                    $route['action'] = 'index';
+                }
+                if(!isset($route['prefix'])){
+                    $route['prefix'] = '';
+                }else{
+                    $route['prefix'] .= '\\';
+                }
+                $route['controller'] = self::upperCamelCase($route['controller']); // получаем вид app\controllers\PageNewController из вида page-new
+                self::$route = $route;
+                // debug($matches);
+                // debug(self::$route);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * метод приводит наименование к такому формату - CamelCase.
+     * пример строки page-new -> PageNew
+     */
+    protected static function upperCamelCase($name){        
+        //$name = str_replace('-', ' ', $name); // заменяем '-' на ' '; получаем page new
+        //$name = ucwords($name); // получаем Page New
+        //$name = str_replace(' ', '', $name); // получаем PageNew        
+        // debug($name);
+        return $name = str_replace(' ', '', ucwords(str_replace('-', ' ', $name)));
+    }
+
+    /**
+     * метод приводит наименование к такому формату - camelCase
+     */
+    protected static function lowerCamelCase($name){
+        return lcfirst(self::upperCamelCase($name));
     }
 
 
