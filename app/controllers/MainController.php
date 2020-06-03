@@ -2,10 +2,16 @@
 
 namespace app\controllers;
 
-class MainController {
+/**
+ * контроллер главной страницы
+ * 
+ * @author user
+ */
+class MainController extends AppController {
 
-    public function indexAction(){
+    public function indexAction(){        
         echo __METHOD__;
+        
     }
 
 }
