@@ -27,7 +27,7 @@ abstract class Controller {
     /**
      * хранятся метаданные
      */
-    public $meta = [];
+    public $meta = ['title' => '', 'desc' => '', 'keywords' => ''];
 
     /**
      * конструктор, который заполняем всеми необходимыми данными
