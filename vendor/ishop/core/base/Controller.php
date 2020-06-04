@@ -18,6 +18,7 @@ abstract class Controller {
     public $controller;
     public $model;
     public $view;
+    public $layout;
     public $prefix;
     /**
      * данные, которые передаем из контроллера в вид
@@ -37,6 +38,14 @@ abstract class Controller {
         $this->model = $route['controller'];
         $this->view = $route['action'];
         $this->prefix = $route['prefix'];
+    }
+
+    /**
+     * метод создает объект вида и вызывает метод render()
+     */
+    public function getView(){
+        $viewObject = new View($this->route, $this->layout, $this->view, $this->meta);
+        $viewObject->render($this->data);
     }
 
     /**

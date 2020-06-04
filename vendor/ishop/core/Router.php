@@ -60,7 +60,8 @@ class Router {
                 $controllerObject = new $controller(self::$route); //создаем объект контроллера и передаем в конструктор объекта все параметры $route
                 $action = self::lowerCamelCase(self::$route['action']) . 'Action';
                 if(method_exists($controllerObject, $action)){
-                    $controllerObject->$action();
+                    $controllerObject->$action();//вызываем метод объекта контроллера
+                    $controllerObject->getView();//вызываем метод базового контроллера Controller
                 }else{
                     throw new Exception("Метод $controller::$action не найден", 404);
                 }

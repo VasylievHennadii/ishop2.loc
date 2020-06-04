@@ -124,3 +124,7 @@
 ====================
 [2020-06-03 23:14:12] Текст ошибки: Метод app\controllers\PageController::indexAction не найден | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 65
 ====================
+[2020-06-04 01:01:43] Текст ошибки: Метод app\controllers\PageController::indexAction не найден | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 65
+====================
+[2020-06-04 13:56:44] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 71
+====================
