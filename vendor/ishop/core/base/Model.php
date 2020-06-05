@@ -2,6 +2,8 @@
 
 namespace ishop\base;
 
+use ishop\Db;
+
 /**
  * класс отвечает за работу с данными,
  * в первую очередь с Базой Данных, 
@@ -17,7 +19,7 @@ abstract class Model {
      * организовываем подключение к БД
      */
     public function __construct() {
-        
+        Db::instance();
     }
 
 }
