@@ -53,6 +53,7 @@ class Router {
      * false-> вовращает ошибку 404
      */
     public static function dispatch($url){
+        $url = self::removeQueryString($url);     
         if(self::matchRoute($url)){
            $controller = 'app\controllers\\' . self::$route['prefix'] . self::$route['controller'] . 'Controller';//такой вид строки 'app\controllers\pageController'
 
@@ -122,6 +123,21 @@ class Router {
      */
     protected static function lowerCamelCase($name){
         return lcfirst(self::upperCamelCase($name));
+    }
+
+    /**
+     * метод для работы с GET параметрами
+     */
+    protected static function removeQueryString($url){
+        //из строки $url "page/view/&id=1&page=2" получаем:
+        if($url){
+            $params = explode('&', $url, 2);//получаем: Array ([0] => page/view/ , [1] => id=1&page=2)
+            if(false === strpos($params[0], '=')){
+                return rtrim($params[0], '/');//если в [0] нет '=', то мы его вовращаем обрезая '/'
+            }else{
+                return '';
+            }
+        }
     }
 
 

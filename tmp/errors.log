@@ -128,3 +128,17 @@
 ====================
 [2020-06-04 13:56:44] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 71
 ====================
+[2020-06-05 18:57:42] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 72
+====================
+[2020-06-05 19:20:46] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 72
+====================
+[2020-06-05 19:45:53] Текст ошибки: Call to undefined method app\controllers\PageController::getView() | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 65
+====================
+[2020-06-05 19:46:39] Текст ошибки: Call to undefined method app\controllers\PageController::getView() | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 66
+====================
+[2020-06-05 19:48:48] Текст ошибки: Call to undefined method app\controllers\PageController::getView() | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 66
+====================
+[2020-06-05 19:48:50] Текст ошибки: Call to undefined method app\controllers\PageController::getView() | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 66
+====================
+[2020-06-05 19:49:55] Текст ошибки: Не найден вид C:\OpenServer\OSPanel\domains\ishop2.loc/app/views/Page/view.php | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\base\View.php | Строка: 61
+====================
