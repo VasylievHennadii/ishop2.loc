@@ -2,6 +2,8 @@
 
 namespace app\controllers;
 
+use ishop\Cache;
+
 // use R;
 
 /**
@@ -19,7 +21,15 @@ class MainController extends AppController {
         $this->setMeta('Главная страница', 'Описание...', 'Ключевики...');
         $name = 'John';
         $age = 30;
-        $names = ['Andrey', 'Jane'];
+        $names = ['Andrey', 'Jane', 'Mike'];
+        $cache = Cache::instance();
+        // $cache->set('test', $names);//поучение данных в кеш(кеширование данных)
+        // $cache->delete('test');
+        $data = $cache->get('test');//получение данных из кеша
+        if(!$data){
+            $cache->set('test', $names);
+        }
+        debug($data);
         $this->set(compact('name', 'age', 'names', 'posts'));
         
     }
