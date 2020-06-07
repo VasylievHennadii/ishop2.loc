@@ -35,7 +35,7 @@ define("CONF", ROOT . '/config');
 /**
  * в константе хранится шаблон нашего сайта по умолчанию
  */
-define("LAYOUT", 'default');
+define("LAYOUT", 'watches');
 
 $app_path = "http://{$_SERVER['HTTP_HOST']}{$_SERVER['PHP_SELF']}"; //получаем строку вида http://ishop2.loc/public/index.php
 $app_path = preg_replace("#[^/]+$#", '', $app_path); //получаем строку вида http://ishop2.loc/public/
