@@ -1,0 +1,18 @@
+[2020-06-08 01:59:02] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 73
+====================
+[2020-06-08 20:55:44] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 73
+====================
+[2020-06-08 23:12:18] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 73
+====================
+[2020-06-08 23:16:08] Текст ошибки: Call to undefined function php() | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\app\views\Main\index.php | Строка: 64
+====================
+[2020-06-08 23:17:28] Текст ошибки: Call to undefined function php() | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\app\views\Main\index.php | Строка: 64
+====================
+[2020-06-08 23:17:55] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 73
+====================
+[2020-06-08 23:37:15] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 73
+====================
+[2020-06-08 23:37:48] Текст ошибки: Контроллер app\controllers\CartController не найден | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 70
+====================
+[2020-06-08 23:39:26] Текст ошибки: Контроллер app\controllers\CartController не найден | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 70
+====================
