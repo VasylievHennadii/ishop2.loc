@@ -16,3 +16,13 @@
 ====================
 [2020-06-08 23:39:26] Текст ошибки: Контроллер app\controllers\CartController не найден | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 70
 ====================
+[2020-06-09 00:09:11] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 73
+====================
+[2020-06-09 00:09:17] Текст ошибки: Контроллер app\controllers\CartController не найден | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 70
+====================
+[2020-06-09 00:09:23] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 73
+====================
+[2020-06-10 12:38:01] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 73
+====================
+[2020-06-10 15:11:03] Текст ошибки: syntax error, unexpected '$this' (T_VARIABLE) | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\app\widgets\currency\Currency.php | Строка: 39
+====================
