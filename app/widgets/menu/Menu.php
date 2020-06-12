@@ -4,6 +4,7 @@ namespace app\widgets\menu;
 
 use ishop\App;
 use ishop\Cache;
+use RedUNIT\Base\Threeway;
 
 /**
  * класс меню
@@ -38,6 +39,11 @@ class Menu {
      * таблица в БД, из которых необходимо выбирать эти самые данные(= 'category')
      */
     protected $table = 'category';
+
+    /**
+     * класс по умолчанию
+     */
+    protected $class = 'menu';
 
     /**
      * на какое время кешируются данные(= 3600)
@@ -90,8 +96,15 @@ class Menu {
         $this->menuHtml = $cache->get($this->cacheKey);
         if(!$this->menuHtml){
             $this->data = App::$app->getProperty('cats');
-            if($this->data){
+            if(!$this->data){
                 $this->data = $cats = \R::getAssoc("SELECT * FROM {$this->table}");
+            }
+            $this->tree = $this->getTree();
+            // debug($this->data);
+            // debug($this->tree);
+            $this->menuHtml = $this->getMenuHtml($this->tree);
+            if($this->cache){
+                $cache->set($this->cacheKey, $this->menuHtml, $this->cache);
             }
         }
         $this->output();
@@ -101,28 +114,52 @@ class Menu {
      * метод для вывода меню
      */
     protected function output(){
-        echo $this->menuHtml;
+        $attrs = '';        
+        if(!empty($this->attrs)){
+            foreach($this->attrs as $k => $v){
+                $attrs .= " $k='$v' ";
+            }
+        }
+        echo "<{$this->container} class='{$this->class}' $attrs>";
+            echo $this->prepend;
+            echo $this->menuHtml;
+        echo "</{$this->container}>";
     }
 
     /**
      * метод получающий дерево
      */
     protected function getTree(){
-
+        $tree = [];
+        $data = $this->data;
+        foreach ($data as $id=>&$node) {
+            if (!$node['parent_id']){
+                $tree[$id] = &$node;
+            }else{
+                $data[$node['parent_id']]['childs'][$id] = &$node;
+            }
+        }
+        return $tree;
     }
 
     /**
      * метод для формирования вложенных уровней меню
      */
     protected function getMenuHtml($tree, $tab = ''){
-
+        $str = '';
+        foreach($tree as $id => $category){
+            $str .= $this->catToTemplate($category, $tab, $id);
+        }
+        return $str;
     }
 
     /**
-     * метод из одной категории формирует кусок html кода
+     * метод из одной категории формирует кусок html кода используя кеширование
      */
     protected function catToTemplate($category, $tab, $id){
-
+        ob_start();
+        require $this->tpl;//подключаем шаблон, используем буферизацию, чтобы он не выводился
+        return ob_get_clean();
     }
 
 

@@ -70,7 +70,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="menu">
 					<?php new \app\widgets\menu\Menu([
 						'tpl' => WWW . '/menu/menu.php',
-						'container' => 'ul'
+						// 'attrs' => [
+						// 	'style' => 'border: 1px solid red;',
+						// 	'id' => 'menu'
+						// ]
 					]);?>
 				</div>
 				<!-- <div class="top-nav">

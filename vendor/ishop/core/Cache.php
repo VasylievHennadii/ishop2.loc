@@ -37,7 +37,7 @@ class Cache {
             $content = unserialize(file_get_contents($file));
             //проверяем не устарел ли кеш
             if(time() <= $content['end_time']){
-                return $content; //возвращаем кеш, если он не устарел
+                return $content['data']; //возвращаем кеш, если он не устарел
             }
             unlink($file); //удаляем кеш, если он устарел
         }
