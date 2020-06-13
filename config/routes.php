@@ -6,7 +6,8 @@
 
 use ishop\Router;
 
-
+//пользовательские маршруты
+Router::add('^product/(?P<alias>[a-z0-9-]+)/?$', ['controller' => 'Product', 'action' => 'view']);
 
 //default routes -admin- дефолтный маршрут для админской части
 Router::add('^admin$', ['controller' => 'Main', 'action' => 'index', 'prefix' => 'admin']);
