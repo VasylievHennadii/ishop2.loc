@@ -98,3 +98,5 @@
 ====================
 [2020-06-13 20:34:00] Текст ошибки: Страница 'casio-ga-1000-1aer2' не найдена | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\app\controllers\ProductController.php | Строка: 19
 ====================
+[2020-06-14 00:12:56] Текст ошибки: Контроллер app\controllers\CategoryController не найден | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 70
+====================

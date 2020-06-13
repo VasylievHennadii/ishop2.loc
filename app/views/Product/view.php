@@ -13,75 +13,83 @@
 <!--start-single-->
 <div class="single contact">
     <div class="container">
-        <div class="single-main">
-            <?=debug($product);?>
+        <div class="single-main">            
             <div class="col-md-9 single-main-left">
-            <div class="sngl-top">
-                <div class="col-md-5 single-top-left">	
-                    <div class="flexslider">
-                            <ul class="slides">
-                            <li data-thumb="images/s-1.jpg">
-                                <div class="thumb-image"> <img src="images/s-1.jpg" data-imagezoom="true" class="img-responsive" alt=""/> </div>
-                            </li>
-                            <li data-thumb="images/s-2.jpg">
-                                    <div class="thumb-image"> <img src="images/s-2.jpg" data-imagezoom="true" class="img-responsive" alt=""/> </div>
-                            </li>
-                            <li data-thumb="images/s-3.jpg">
-                                <div class="thumb-image"> <img src="images/s-3.jpg" data-imagezoom="true" class="img-responsive" alt=""/> </div>
-                            </li> 
-                            </ul>
-                    </div>                    
-                </div>	
-                <div class="col-md-7 single-top-right">
-                    <div class="single-para simpleCart_shelfItem">
-                    <h2>Lorem Ipsum</h2>
-                        <div class="star-on">
-                            <ul class="star-footer">
-                                <li><a href="#"><i> </i></a></li>
-                                <li><a href="#"><i> </i></a></li>
-                                <li><a href="#"><i> </i></a></li>
-                                <li><a href="#"><i> </i></a></li>
-                                <li><a href="#"><i> </i></a></li>
-                            </ul>
-                            <div class="review">
-                                <a href="#"> 1 customer review </a>                                
+                <div class="sngl-top">
+                    <div class="col-md-5 single-top-left">	
+                        <div class="flexslider">
+                                <ul class="slides">
+                                <li data-thumb="images/s-1.jpg">
+                                    <div class="thumb-image"> <img src="images/s-1.jpg" data-imagezoom="true" class="img-responsive" alt=""/> </div>
+                                </li>
+                                <li data-thumb="images/s-2.jpg">
+                                        <div class="thumb-image"> <img src="images/s-2.jpg" data-imagezoom="true" class="img-responsive" alt=""/> </div>
+                                </li>
+                                <li data-thumb="images/s-3.jpg">
+                                    <div class="thumb-image"> <img src="images/s-3.jpg" data-imagezoom="true" class="img-responsive" alt=""/> </div>
+                                </li> 
+                                </ul>
+                        </div>                    
+                    </div>	
+                    <?php 
+                    $curr = \ishop\App::$app->getProperty('currency');
+                    $cats = \ishop\App::$app->getProperty('cats');                  
+                    ?>
+                    <div class="col-md-7 single-top-right">
+                        <div class="single-para simpleCart_shelfItem">
+                        <h2><?=$product->title;?></h2>
+                            <div class="star-on">
+                                <ul class="star-footer">
+                                    <li><a href="#"><i> </i></a></li>
+                                    <li><a href="#"><i> </i></a></li>
+                                    <li><a href="#"><i> </i></a></li>
+                                    <li><a href="#"><i> </i></a></li>
+                                    <li><a href="#"><i> </i></a></li>
+                                </ul>
+                                <div class="review">
+                                    <a href="#"> 1 customer review </a>                                
+                                </div>
+                                <div class="clearfix"> </div>
                             </div>
-                            <div class="clearfix"> </div>
+                            
+                            <h5 class="item_price"><?=$curr['symbol_left'];?><?=$product->price*$curr['value'];?><?=$curr['symbol_right'];?></h5>
+                            <?php if($product->old_price) : ?>
+                                <del><?=$curr['symbol_left'];?><?=$product->old_price*$curr['value'];?><?=$curr['symbol_right'];?></del>
+                            <?php endif; ?>
+                            <?=$product->content;?>
+                            <div class="available">
+                                <ul>
+                                    <li>Color
+                                        <select>
+                                        <option>Silver</option>
+                                        <option>Black</option>
+                                        <option>Dark Black</option>
+                                        <option>Red</option>
+                                        </select></li>
+                                    <li class="size-in">Size
+                                        <select>
+                                        <option>Large</option>
+                                        <option>Medium</option>
+                                        <option>small</option>
+                                        <option>Large</option>
+                                        <option>small</option>
+                                        </select></li>
+                                    <div class="clearfix"> </div>
+                                </ul>
+                            </div>
+                            <ul class="tag-men">
+                                <li><span>CATEGORY</span>
+                                <span >: <a href="category/<?=$cats[$product->category_id]['alias'];?>"><?=$cats[$product->category_id]['title'];?></a></span></li>                                
+                            </ul>
+                            <div class="quantity">
+                                <input type="number" size="4" value="1" name="quantity" min="1" step="1">
+                            </div>
+                            <a id="productAdd" data-id="<?=$product->id;?>" href="cart/add?id=<?=$product->id;?>" class="add-cart item_add add-to-cart-link">ADD TO CART</a>
+                            
                         </div>
-                        
-                        <h5 class="item_price">$ 95.00</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-                        <div class="available">
-                            <ul>
-                                <li>Color
-                                    <select>
-                                    <option>Silver</option>
-                                    <option>Black</option>
-                                    <option>Dark Black</option>
-                                    <option>Red</option>
-                                </select></li>
-                            <li class="size-in">Size<select>
-                                <option>Large</option>
-                                <option>Medium</option>
-                                <option>small</option>
-                                <option>Large</option>
-                                <option>small</option>
-                            </select></li>
-                            <div class="clearfix"> </div>
-                        </ul>
                     </div>
-                        <ul class="tag-men">
-                            <li><span>TAG</span>
-                            <span class="women1">: Women,</span></li>
-                            <li><span>SKU</span>
-                            <span class="women1">: CK09</span></li>
-                        </ul>
-                            <a href="#" class="add-cart item_add">ADD TO CART</a>
-                        
-                    </div>
+                    <div class="clearfix"> </div>
                 </div>
-                <div class="clearfix"> </div>
-            </div>
             <div class="tabs">
                 <ul class="menu_drop">
                     <li class="item1"><a href="#"><img src="images/arrow.png" alt="">Description</a>

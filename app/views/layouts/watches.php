@@ -14,7 +14,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<link href="megamenu/css/style.css" rel="stylesheet" type="text/css" media="all" />
 	<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
     <!--theme-style-->
-    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
+    <link href="public/css/style.css" rel="stylesheet" type="text/css" media="all" />	
     <!--//theme-style-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    
@@ -198,6 +198,30 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			animation: "slide",
 			controlNav: "thumbnails"
 			});
+		});
+	</script>
+	<!--dropdown-->
+	<script src="js/jquery.easydropdown.js"></script>	
+	<script type="text/javascript">
+		$(function() {
+		
+			var menu_ul = $('.menu_drop > li > ul'),
+				menu_a  = $('.menu_drop > li > a');
+			
+			menu_ul.hide();
+		
+			menu_a.click(function(e) {
+				e.preventDefault();
+				if(!$(this).hasClass('active')) {
+					menu_a.removeClass('active');
+					menu_ul.filter(':visible').slideUp('normal');
+					$(this).addClass('active').next().stop(true,true).slideDown('normal');
+				} else {
+					$(this).removeClass('active');
+					$(this).next().stop(true,true).slideUp('normal');
+				}
+			});
+		
 		});
 	</script>
 	<script src="js/main.js"></script>
