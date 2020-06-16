@@ -100,3 +100,9 @@
 ====================
 [2020-06-14 00:12:56] Текст ошибки: Контроллер app\controllers\CategoryController не найден | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 70
 ====================
+[2020-06-14 00:40:55] Текст ошибки: Контроллер app\controllers\CartController не найден | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 70
+====================
+[2020-06-16 13:40:08] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 73
+====================
+[2020-06-16 13:40:33] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 73
+====================
