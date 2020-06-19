@@ -161,7 +161,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</div>
 		</div>
 	</div>
-    <!--footer-end-->
+	<!--footer-end-->
+	
+	<?php $curr = \ishop\App::$app->getProperty('currency'); ?>	
+	<script>
+		var path = '<?=PATH;?>',
+			course = <?=$curr['value'];?>,
+			symboleLeft = '<?=$curr['symbol_left'];?>',
+			symboleRight = '<?=$curr['symbol_right'];?>';
+	</script>							
+
     <script src="js/jquery-1.11.0.min.js"></script>
     <script src="js/simpleCart.min.js"> </script>    
     <!--dropdown-->
@@ -224,7 +233,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		
 		});
 	</script>
-	<script src="js/main.js"></script>
+	<script src="public/js/main.js"></script>
     <!--End-slider-script-->
     
      <?php 

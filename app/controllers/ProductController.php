@@ -46,9 +46,11 @@ class ProductController extends AppController {
         
 
         //модификации товара
+        $mods = \R::findAll('modification', 'product_id = ?', [$product->id]);
+        // debug($mods);
 
         $this->setMeta($product->title, $product->description, $product->keywords);//установка метаданных
-        $this->set(compact('product', 'related', 'gallery', 'recentlyViewed', 'breadcrumbs'));
+        $this->set(compact('product', 'related', 'gallery', 'recentlyViewed', 'breadcrumbs', 'mods'));
     }
 
 }
