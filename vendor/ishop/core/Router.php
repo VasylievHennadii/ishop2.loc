@@ -55,7 +55,7 @@ class Router {
     public static function dispatch($url){
         $url = self::removeQueryString($url);     
         if(self::matchRoute($url)){
-           $controller = 'app\controllers\\' . self::$route['prefix'] . self::$route['controller'] . 'Controller';//такой вид строки 'app\controllers\pageController'
+            $controller = 'app\controllers\\' . self::$route['prefix'] . self::$route['controller'] . 'Controller';//такой вид строки 'app\controllers\pageController'
 
            if(class_exists($controller)){
                 $controllerObject = new $controller(self::$route); //создаем объект контроллера и передаем в конструктор объекта все параметры $route
@@ -64,13 +64,13 @@ class Router {
                     $controllerObject->$action();//вызываем метод объекта контроллера
                     $controllerObject->getView();//вызываем метод базового контроллера Controller
                 }else{
-                    throw new Exception("Метод $controller::$action не найден", 404);
+                    throw new \Exception("Метод $controller::$action не найден", 404);
                 }
             }else{
-                throw new Exception("Контроллер $controller не найден", 404);
+                throw new \Exception("Контроллер $controller не найден", 404);
             }
         }else{
-           throw new Exception("Страница не найдена", 404);
+           throw new \Exception("Страница не найдена", 404);
         }
     }
 

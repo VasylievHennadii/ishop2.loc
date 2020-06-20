@@ -233,7 +233,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		
 		});
 	</script>
-	<script src="public/js/main.js"></script>
+	<script src="js/main.js"></script>
     <!--End-slider-script-->
     
      <?php 

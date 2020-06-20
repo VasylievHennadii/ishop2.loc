@@ -116,3 +116,69 @@
 ====================
 [2020-06-19 18:29:49] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 73
 ====================
+[2020-06-20 13:59:15] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 73
+====================
+[2020-06-20 14:22:49] Текст ошибки: Контроллер app\controllers\CartController не найден | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 70
+====================
+[2020-06-20 14:28:39] Текст ошибки: Контроллер app\controllers\CartController не найден | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 70
+====================
+[2020-06-20 14:28:47] Текст ошибки: syntax error, unexpected '=' | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\app\views\Main\index.php | Строка: 57
+====================
+[2020-06-20 14:29:22] Текст ошибки: Контроллер app\controllers\CartController не найден | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 70
+====================
+[2020-06-20 14:29:31] Текст ошибки: syntax error, unexpected '=' | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\app\views\Main\index.php | Строка: 57
+====================
+[2020-06-20 14:31:51] Текст ошибки: Контроллер app\controllers\CartController не найден | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 70
+====================
+[2020-06-20 14:32:55] Текст ошибки: Контроллер app\controllers\CartController не найден | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 70
+====================
+[2020-06-20 14:34:58] Текст ошибки: Контроллер app\controllers\CartController не найден | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 70
+====================
+[2020-06-20 14:35:08] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 73
+====================
+[2020-06-20 14:35:16] Текст ошибки: Контроллер app\controllers\CartController не найден | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 70
+====================
+[2020-06-20 14:39:36] Текст ошибки: Контроллер app\controllers\CartController не найден | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 70
+====================
+[2020-06-20 14:42:22] Текст ошибки: Контроллер app\controllers\CartController не найден | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 70
+====================
+[2020-06-20 14:42:47] Текст ошибки: Контроллер app\controllers\CartController не найден | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 70
+====================
+[2020-06-20 14:43:15] Текст ошибки: Контроллер app\controllers\CartController не найден | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 70
+====================
+[2020-06-20 14:47:26] Текст ошибки: Контроллер app\controllers\CartController не найден | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 70
+====================
+[2020-06-20 14:48:47] Текст ошибки: Контроллер app\controllers\CartController не найден | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 70
+====================
+[2020-06-20 14:56:46] Текст ошибки: Call to a member function grep() on null | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\app\views\layouts\watches.php | Строка: 244
+====================
+[2020-06-20 14:56:49] Текст ошибки: Контроллер app\controllers\CartController не найден | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 70
+====================
+[2020-06-20 14:56:58] Текст ошибки: Call to a member function grep() on null | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\app\views\layouts\watches.php | Строка: 244
+====================
+[2020-06-20 15:00:13] Текст ошибки: Контроллер app\controllers\CartController не найден | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 70
+====================
+[2020-06-20 15:02:10] Текст ошибки: Контроллер app\controllers\CartController не найден | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 70
+====================
+[2020-06-20 15:04:29] Текст ошибки: Контроллер app\controllers\CartController не найден | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 70
+====================
+[2020-06-20 15:12:46] Текст ошибки: Метод app\controllers\CartController::addAction не найден | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 67
+====================
+[2020-06-20 15:13:33] Текст ошибки: Метод app\controllers\CartController::addAction не найден | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 67
+====================
+[2020-06-20 15:15:16] Текст ошибки: Не найден вид C:\OpenServer\OSPanel\domains\ishop2.loc/app/views/Cart/add.php | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\base\View.php | Строка: 61
+====================
+[2020-06-20 15:16:18] Текст ошибки: Не найден вид C:\OpenServer\OSPanel\domains\ishop2.loc/app/views/Cart/add.php | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\base\View.php | Строка: 61
+====================
+[2020-06-20 15:16:49] Текст ошибки: Не найден вид C:\OpenServer\OSPanel\domains\ishop2.loc/app/views/Cart/add.php | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\base\View.php | Строка: 61
+====================
+[2020-06-20 15:23:56] Текст ошибки: Не найден вид C:\OpenServer\OSPanel\domains\ishop2.loc/app/views/Cart/add.php | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\base\View.php | Строка: 61
+====================
+[2020-06-20 15:25:54] Текст ошибки: Не найден вид C:\OpenServer\OSPanel\domains\ishop2.loc/app/views/Cart/add.php | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\base\View.php | Строка: 61
+====================
+[2020-06-20 15:34:46] Текст ошибки: Не найден вид C:\OpenServer\OSPanel\domains\ishop2.loc/app/views/Cart/add.php | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\base\View.php | Строка: 61
+====================
+[2020-06-20 20:46:21] Текст ошибки: Не найден вид C:\OpenServer\OSPanel\domains\ishop2.loc/app/views/Cart/add.php | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\base\View.php | Строка: 61
+====================
+[2020-06-20 20:46:34] Текст ошибки: Не найден вид C:\OpenServer\OSPanel\domains\ishop2.loc/app/views/Cart/add.php | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\base\View.php | Строка: 61
+====================
