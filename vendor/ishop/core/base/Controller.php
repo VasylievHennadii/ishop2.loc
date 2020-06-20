@@ -64,4 +64,22 @@ abstract class Controller {
         $this->meta['keywords'] = $keywords;
     }
 
+    /**
+     * eсли запрос от Ajax пришел асинхронный, то метод возвращает true
+     */
+    public function isAjax() {
+        return isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] === 'XMLHttpRequest';
+    }
+
+    /**
+     * метод возвращает html ответ на Ajax запрос
+     */
+    public function loadView($view, $vars = []){
+        extract($vars);
+        require APP . "/views/{$this->prefix}{$this->controller}/{$view}.php";
+        die;
+    }
+
+
+
 }
