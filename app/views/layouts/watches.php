@@ -14,7 +14,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<link href="megamenu/css/style.css" rel="stylesheet" type="text/css" media="all" />
 	<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
     <!--theme-style-->
-    <link href="public/css/style.css" rel="stylesheet" type="text/css" media="all" />	
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
     <!--//theme-style-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    
@@ -43,15 +43,26 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</div>
 						<div class="clearfix"></div>
 					</div>
-				</div>
+				</div>				
 				<div class="col-md-6 top-header-left">
 					<div class="cart box_1">
-						<a href="checkout.html">
+						<a href="cart/show" onclick="getCart(); return false;">
+							<div class="total">
+								<img src="images/cart-1.png" alt="" />
+								<?php if(!empty($_SESSION['cart'])): ?>
+									<span class="simpleCart_total"><?=$_SESSION['cart.currency']['symbol_left'] . $_SESSION['cart.sum'] . $_SESSION['cart.currency']['symbol_right'];?></span>
+								<?php else: ?>
+									<span class="simpleCart_total">Empty Cart</span>
+								<?php endif; ?>
+							</div>
+						</a>
+
+						<!-- <a href="checkout.html">
 							 <div class="total">
 								<span class="simpleCart_total"></span></div>
 								<img src="images/cart-1.png" alt="" />
 						</a>
-						<p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
+						<p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p> -->
 						<div class="clearfix"> </div>
 					</div>
 				</div>
@@ -95,7 +106,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 	<!--bottom-header-->
 
-    <div class="content">	
+    <div class="content">			
         <?=$content;?>
     </div>
 
@@ -172,7 +183,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<h4 class="modal-title" id="myModalLabel">Корзина</h4>
 				</div>
 				<div class="modal-body">
-
+					<!-- вставляется модальное окно -->
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Продолжить покупки</button>
@@ -256,7 +267,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		
 		});
 	</script>
-	<script src="js/main.js"></script>
+	<script src="/public/js/main.js"></script>
     <!--End-slider-script-->
     
      <?php 
