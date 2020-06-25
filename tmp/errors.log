@@ -4,3 +4,7 @@
 ====================
 [2020-06-24 22:05:19] Текст ошибки: Контроллер app\controllers\CategoryController не найден | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 70
 ====================
+[2020-06-25 21:40:32] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 73
+====================
+[2020-06-25 21:47:50] Текст ошибки: Метод app\controllers\CartController::viewAction не найден | Файл: C:\OpenServer\OSPanel\domains\ishop2.loc\vendor\ishop\core\Router.php | Строка: 67
+====================
