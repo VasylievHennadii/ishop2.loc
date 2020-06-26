@@ -14,7 +14,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<link href="megamenu/css/style.css" rel="stylesheet" type="text/css" media="all" />
 	<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
     <!--theme-style-->
-    <link href="/public/css/style.css" rel="stylesheet" type="text/css" media="all" />	
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
     <!--//theme-style-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    
@@ -55,14 +55,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<span class="simpleCart_total">Empty Cart</span>
 								<?php endif; ?>
 							</div>
-						</a>
-
-						<!-- <a href="checkout.html">
-							 <div class="total">
-								<span class="simpleCart_total"></span></div>
-								<img src="images/cart-1.png" alt="" />
-						</a>
-						<p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p> -->
+						</a>						
 						<div class="clearfix"> </div>
 					</div>
 				</div>
@@ -96,8 +89,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 				<div class="col-md-3 header-right"> 
 					<div class="search-bar">
-						<input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
+					<form action="search" method="get" autocomplete="off">
+						<input type="text" class="typeahead" id="typeahead" name="s">
 						<input type="submit" value="">
+					</form>
+						<!-- <input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
+						<input type="submit" value=""> -->
 					</div>
 				</div>
 				<div class="clearfix"> </div>
@@ -206,6 +203,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
     <script src="js/jquery-1.11.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/typeahead.bundle.js"></script>
     <!-- <script src="js/simpleCart.min.js"> </script>     -->
     <!--dropdown-->
     <script src="js/jquery.easydropdown.js"></script>	
@@ -267,7 +265,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		
 		});
 	</script>
-	<script src="js/main.js"></script>
+	<script src="/public/js/main.js"></script>
     <!--End-slider-script-->
     
      <?php 
