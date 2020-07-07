@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\Breadcrumbs;
 use app\models\Category;
 
 /**
@@ -18,7 +19,7 @@ class CategoryController extends AppController {
         } 
 
         //хлебные крошки
-        $breadcrumbs = '';
+        $breadcrumbs = Breadcrumbs::getBreadcrumbs($category->id);
 
         $cat_model = new Category();
         $ids = $cat_model->getIds($category->id);

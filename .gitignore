@@ -5,5 +5,14 @@
 /tmp/errors.log
 
 /public/js/bootstrap.min.js
+/public/js/imagezoom.js
+/public/js/jquery-1.11.0.min.js
+/public/js/jquery.easydropdown.js
+/public/js/jquery.flexslider.js
+/public/js/memenu.js
+/public/js/responsiveslides.min.js
+/public/js/simpleCart.min.js
+/public/js/typeahead.bundle.js
+
 
 /public/megamenu/
