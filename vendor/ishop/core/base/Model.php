@@ -11,15 +11,37 @@ use ishop\Db;
  */
 abstract class Model {
 
-    public $attributes = []; //хранит массив свойств модели, который идентичен полям в таблице БД
-    public $errors = []; //складываем сюда ошибки
-    public $rules = []; //свойство для правил валидации данных
+    /**
+     * свойство хранит массив свойств модели (модель User), который идентичен полям в таблице БД
+     */
+    public $attributes = []; 
+
+    /**
+     * свойство хранит ошибки
+     */
+    public $errors = []; 
+
+    /**
+     * свойство для правил валидации данных
+     */
+    public $rules = []; 
 
     /**
      * организовываем подключение к БД
      */
     public function __construct() {
         Db::instance();
+    }
+
+    /**
+     * метод загружает данные из формы в модель(например при регистрации или авторизации)
+     */
+    public function load($data){
+        foreach($this->attributes as $name => $value){
+            if(isset($data[$name])) {
+                $this->attributes[$name] = $data[$name];
+            }
+        }
     }
 
 }

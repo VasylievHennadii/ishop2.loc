@@ -4,6 +4,9 @@ namespace app\controllers;
 
 use app\models\Cart;
 
+/**
+ * контроллер корзины
+ */
 class CartController extends AppController {
 
     public function addAction(){

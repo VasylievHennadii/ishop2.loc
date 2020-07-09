@@ -27,7 +27,7 @@ Array
 use ishop\App;
 
 /**
- * класс корзины товаров
+ * модель корзины товаров
  */
 class Cart extends AppModel {
     

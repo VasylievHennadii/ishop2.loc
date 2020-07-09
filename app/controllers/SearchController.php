@@ -2,6 +2,9 @@
 
 namespace app\controllers;
 
+/**
+ * контроллер для поиска товаров
+ */
 class SearchController extends AppController {
 
     /**

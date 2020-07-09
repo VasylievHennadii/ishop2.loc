@@ -3,7 +3,7 @@
 namespace ishop;
 
 /**
- * Description of App
+ * класс контейнер для нашего приложения
  *
  * @author user
  */

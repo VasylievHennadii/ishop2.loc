@@ -14,7 +14,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<link href="megamenu/css/style.css" rel="stylesheet" type="text/css" media="all" />
 	<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
     <!--theme-style-->
-    <link href="/public/css/style.css" rel="stylesheet" type="text/css" media="all" />	
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
     <!--//theme-style-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    
@@ -33,13 +33,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<?php new app\widgets\currency\Currency(); ?>
 							</select>
 						</div>
-						<div class="box1">
-							<select tabindex="4" class="dropdown">
-								<option value="" class="label">English :</option>
-								<option value="1">English</option>
-								<option value="2">French</option>
-								<option value="3">German</option>
-							</select>
+						<div class="btn-group">
+							<a class="dropdown-toggle" data-toggle="dropdown">Account <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<?php if(!empty($_SESSION['user'])): ?>
+									<li><a href="#">Добро пожаловать, <?=h($_SESSION['user']['name']); ?></a></li>
+									<li><a href="user/logout">Выход</a></li>
+								<?php else: ?>
+									<li><a href="user/login">Вход</a></li>
+									<li><a href="user/signup">Регистрация</a></li>
+								<?php endif; ?>
+							</ul>
 						</div>
 						<div class="clearfix"></div>
 					</div>
