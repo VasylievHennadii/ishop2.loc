@@ -3,6 +3,7 @@
 namespace ishop\base;
 
 use ishop\Db;
+use Valitron\Validator;
 
 /**
  * класс отвечает за работу с данными,
@@ -42,6 +43,35 @@ abstract class Model {
                 $this->attributes[$name] = $data[$name];
             }
         }
+    }
+
+    /**
+     * метод валидации с помощью плагина валидации vlucas\valitron
+     */
+    public function validate($data){  
+        Validator::langDir(WWW . '/myValidator/lang');
+        Validator::lang('ru');      
+        $v = new Validator($data);
+        $v->rules($this->rules);
+        if($v->validate()){
+            return true;
+        }
+        $this->errors = $v->errors();
+        return false;
+    }
+
+    /**
+     * метод вывода ошибок
+     */
+    public function getErrors(){
+        $errors = '<ul>';
+        foreach($this->errors as $error){
+            foreach($error as $item){
+                $errors .= "<li>$item</li>";
+            }
+        }
+        $errors .= '</ul>';
+        $_SESSION['error'] = $errors;
     }
 
 }
