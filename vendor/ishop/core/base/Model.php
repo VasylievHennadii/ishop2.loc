@@ -46,6 +46,18 @@ abstract class Model {
     }
 
     /**
+     * метод сохранения данных от users в БД
+     */
+    public function save($table){
+        $tbl = \R::dispense($table);
+        foreach($this->attributes as $name => $value){
+            $tbl->$name = $value;
+        }
+        return \R::store($tbl);
+    }
+
+
+    /**
      * метод валидации с помощью плагина валидации vlucas\valitron
      */
     public function validate($data){  
