@@ -1432,7 +1432,7 @@ a.mask {
     margin-top: 2.2em;
 }
 .account-left input[type="text"],.account-left input[type="password"],.account-left input[type="email"]  {
-    width: 90%;
+    /* width: 90%; */
     margin: 0px;
     color: #000;
     background: none;
@@ -3188,4 +3188,18 @@ span.twitter-typeahead {
     cursor: pointer;
     position: relative;
     top: -2px;
+}
+
+form .has-success .form-control{
+	border-color: green;
+}
+form .has-error .form-control{
+	border-color: red;
+}
+.has-error, .has-success{
+	position: relative;
+}
+.form-control-feedback {
+	right: 10px;	
+	top: 25px;
 }

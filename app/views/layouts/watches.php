@@ -14,7 +14,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<link href="megamenu/css/style.css" rel="stylesheet" type="text/css" media="all" />
 	<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
     <!--theme-style-->
-    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
+    <link href="/public/css/style.css" rel="stylesheet" type="text/css" media="all" />	
     <!--//theme-style-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    
@@ -223,6 +223,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
     <script src="js/jquery-1.11.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="/public/js/validator.js"></script>
     <script src="js/typeahead.bundle.js"></script>
     <!-- <script src="js/simpleCart.min.js"> </script>     -->
     <!--dropdown-->
