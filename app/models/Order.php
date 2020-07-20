@@ -9,14 +9,20 @@ namespace app\models;
 class Order extends AppModel {
 
     /**
-     * сохраняем сам заказ в таблицу order
+     * сохраняем сам заказ в таблицу БД order
      */
     public static function saveOrder($data){
-
+        $order = \R::dispense('order');
+        $order->user_id = $data['user_id'];
+        $order->note = $data['note'];
+        $order->currency = $_SESSION['cart.currency']['code'];
+        $order_id = \R::store($order);
+        self::saveOrderProduct($order_id);
+        return $order_id;
     }
 
     /**
-     * сохраняем продукт заказа в таблицу
+     * сохраняем продукт заказа в таблицу БД order_product
      */
     public static function saveOrderProduct($order_id){
 
