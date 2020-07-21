@@ -123,7 +123,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<?php endif;?>
 				</div>
 			</div>
-		</div>		
+		</div>				
         <?=$content;?>
     </div>
 
