@@ -14,7 +14,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<link href="megamenu/css/style.css" rel="stylesheet" type="text/css" media="all" />
 	<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
     <!--theme-style-->
-    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
+    <link href="public/css/style.css" rel="stylesheet" type="text/css" media="all" />	
     <!--//theme-style-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    
@@ -212,6 +212,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 	<!-- END Modal -->
 
+	<div class="preloader"><img src="images/ring.svg" alt=""></div>
 	
 	<?php $curr = \ishop\App::$app->getProperty('currency'); ?>	
 	<script>
