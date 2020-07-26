@@ -31,6 +31,12 @@ class CategoryController extends AppController {
         //номер текущей страницы либо 1, либо берем из $_GET['page']
         $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
         $perpage = App::$app->getProperty('pagination');//кол-во товаров на страницу
+
+        if($this->isAjax()){
+            debug($_GET);
+            die;
+        }
+
         $total = \R::count('product', "category_id IN ($ids)");//получаем из БД общее кол-во товаров
         $pagination = new Pagination($page, $perpage, $total);
         $start = $pagination->getStart();// с какой записи нужно начинать выбирать
