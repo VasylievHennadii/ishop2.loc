@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Июн 10 2020 г., 17:01
+-- Время создания: Июл 26 2020 г., 13:04
 -- Версия сервера: 10.3.13-MariaDB-log
 -- Версия PHP: 7.1.32
 
@@ -61,52 +61,25 @@ CREATE TABLE `attribute_product` (
 
 INSERT INTO `attribute_product` (`attr_id`, `product_id`) VALUES
 (1, 1),
+(1, 2),
+(1, 3),
 (2, 4),
-(2, 5),
-(2, 11),
-(2, 15),
-(2, 16),
-(2, 17),
-(2, 20),
-(2, 21),
-(2, 22),
-(3, 12),
-(3, 23),
-(3, 24),
-(3, 25),
-(3, 26),
-(4, 2),
-(4, 3),
-(4, 27),
-(4, 28),
 (5, 1),
+(5, 2),
+(5, 3),
 (5, 4),
-(5, 5),
-(5, 12),
-(5, 13),
-(6, 2),
-(6, 29),
-(6, 30),
-(6, 31),
-(6, 32),
-(6, 33),
-(7, 3),
-(7, 6),
 (8, 1),
-(9, 2),
-(9, 14),
-(10, 4),
-(10, 5),
-(10, 13),
-(11, 7),
-(11, 8),
-(11, 9),
-(11, 10),
+(8, 2),
+(8, 3),
+(8, 4),
 (12, 1),
-(14, 3),
-(16, 1),
-(16, 4),
-(16, 5);
+(12, 2),
+(12, 3),
+(12, 4),
+(18, 1),
+(18, 2),
+(18, 4),
+(19, 3);
 
 -- --------------------------------------------------------
 
@@ -292,6 +265,14 @@ CREATE TABLE `order` (
   `note` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Дамп данных таблицы `order`
+--
+
+INSERT INTO `order` (`id`, `user_id`, `status`, `date`, `update_at`, `currency`, `note`) VALUES
+(4, 22, '0', '2020-07-21 18:48:00', NULL, 'USD', 'Ваш заказ прибудет 22-07-2020. Ожидайте SMS по прибытии заказа.'),
+(5, 22, '0', '2020-07-21 19:14:15', NULL, 'UAH', '');
+
 -- --------------------------------------------------------
 
 --
@@ -306,6 +287,18 @@ CREATE TABLE `order_product` (
   `title` varchar(255) NOT NULL,
   `price` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `order_product`
+--
+
+INSERT INTO `order_product` (`id`, `order_id`, `product_id`, `qty`, `title`, `price`) VALUES
+(5, 4, 1, 1, 'Casio MRP-700-1AVEF', 300),
+(6, 4, 2, 1, 'Casio MQ-24-7BUL', 70),
+(7, 4, 3, 3, 'Casio GA-1000-1AER', 400),
+(8, 4, 1, 2, 'Casio MRP-700-1AVEF (Dark Black)', 305),
+(9, 5, 1, 1, 'Casio MRP-700-1AVEF', 7740),
+(10, 5, 2, 1, 'Casio MQ-24-7BUL', 1806);
 
 -- --------------------------------------------------------
 
@@ -334,10 +327,10 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `category_id`, `brand_id`, `title`, `alias`, `content`, `price`, `old_price`, `status`, `keywords`, `description`, `img`, `hit`) VALUES
-(1, 6, 1, 'Casio MRP-700-1AVEF', 'casio-mrp-700-1avef', NULL, 300, 0, '1', NULL, NULL, 'p-1.png', '0'),
-(2, 6, 1, 'Casio MQ-24-7BUL', 'casio-mq-24-7bul', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique, diam in consequat iaculis, est purus iaculis mauris, imperdiet facilisis ante ligula at nulla. Quisque volutpat nulla risus, id maximus ex aliquet ut. Suspendisse potenti. Nulla varius lectus id turpis dignissim porta. Quisque magna arcu, blandit quis felis vehicula, feugiat gravida diam. Nullam nec turpis ligula. Aliquam quis blandit elit, ac sodales nisl. Aliquam eget dolor eget elit malesuada aliquet. In varius lorem lorem, semper bibendum lectus lobortis ac.</p>\n\n                                            <p>Mauris placerat vitae lorem gravida viverra. Mauris in fringilla ex. Nulla facilisi. Etiam scelerisque tincidunt quam facilisis lobortis. In malesuada pulvinar neque a consectetur. Nunc aliquam gravida purus, non malesuada sem accumsan in. Morbi vel sodales libero.</p>', 70, 80, '1', NULL, NULL, 'p-2.png', '1'),
+(1, 6, 1, 'Casio MRP-700-1AVEF', 'casio-mrp-700-1avef', NULL, 300, 0, '1', NULL, NULL, 'p-1.png', '1'),
+(2, 6, 1, 'Casio MQ-24-7BUL', 'casio-mq-24-7bul', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique, diam in consequat iaculis, est purus iaculis mauris, imperdiet facilisis ante ligula at nulla. Quisque volutpat nulla risus, id maximus ex aliquet ut. Suspendisse potenti. Nulla varius lectus id turpis dignissim porta. Quisque magna arcu, blandit quis felis vehicula, feugiat gravida diam. Nullam nec turpis ligula. Aliquam quis blandit elit, ac sodales nisl. Aliquam eget dolor eget elit malesuada aliquet. In varius lorem lorem, semper bibendum lectus lobortis ac.</p>\n\n                                            <p>Mauris placerat vitae lorem gravida viverra. Mauris in fringilla ex. Nulla facilisi. Etiam scelerisque tincidunt quam facilisis lobortis. In malesuada pulvinar neque a consectetur. Nunc aliquam gravida purus, non malesuada sem accumsan in. Morbi vel sodales libero.</p>', 70, 80, '1', '111', '222', 'p-2.png', '1'),
 (3, 6, 1, 'Casio GA-1000-1AER', 'casio-ga-1000-1aer', NULL, 400, 0, '1', NULL, NULL, 'p-3.png', '1'),
-(4, 7, 2, 'Citizen JP1010-00E', 'citizen-jp1010-00e', NULL, 400, 0, '1', NULL, NULL, 'p-4.png', '1'),
+(4, 6, 2, 'Citizen JP1010-00E', 'citizen-jp1010-00e', NULL, 400, 0, '1', NULL, NULL, 'p-4.png', '1'),
 (5, 7, 2, 'Citizen BJ2111-08E', 'citizen-bj2111-08e', NULL, 500, 0, '1', NULL, NULL, 'p-5.png', '1'),
 (6, 7, 2, 'Citizen AT0696-59E', 'citizen-at0696-59e', NULL, 350, 355, '1', NULL, NULL, 'p-6.png', '1'),
 (7, 6, 3, 'Q&Q Q956J302Y', 'q-and-q-q956j302y', NULL, 20, 0, '1', NULL, NULL, 'p-7.png', '1'),
@@ -405,6 +398,18 @@ CREATE TABLE `user` (
   `address` varchar(255) NOT NULL,
   `role` enum('user','admin') NOT NULL DEFAULT 'user'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `user`
+--
+
+INSERT INTO `user` (`id`, `login`, `password`, `email`, `name`, `address`, `role`) VALUES
+(3, 'user2', '$2y$10$mst4R4kaWZKg79SWpF7xou8KGU6rRqwqH1bm2hruERQr370AOhsh2', '2@1.com', 'User2', '222', 'user'),
+(17, 'user3', '$2y$10$QpPMUJdDM4BvyDeKhhUekeIiwVH8yCC9sgt3oeycIs5Rif4lhCiHu', '3@1.com', 'User3', '333', 'user'),
+(19, 'user4', '$2y$10$J7L/MkOn9BMpWfDosohRg.T.o7l4kQU9Y0QcCTPD3FjzBimt3HJuK', '4@1.com', 'User1', '111', 'user'),
+(20, 'user1', '$2y$10$FB2L/vdF7oc8Uhx7Ohyk8e76NKQYNZE3mTnx4fznqBluuc0IuQIi2', '1@1.com', 'User1', '111', 'user'),
+(21, 'user5', '$2y$10$R0fuKctHMdlnuymcfozMWeFMGeZNZPH9H4nQBwn6u403b7.7mcTd2', '5@1.com', 'User5', '555', 'user'),
+(22, 'olha', '$2y$10$QSCBU9hjyNQkra5xurBMFutmxS5u8v/REVFXk/9vg0e8cMFwkuScq', 'felixmagnificent@gmail.com', 'Olha Vasylieva', 'Kharkiv', 'user');
 
 --
 -- Индексы сохранённых таблиц
@@ -548,13 +553,13 @@ ALTER TABLE `modification`
 -- AUTO_INCREMENT для таблицы `order`
 --
 ALTER TABLE `order`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT для таблицы `order_product`
 --
 ALTER TABLE `order_product`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT для таблицы `product`
@@ -566,7 +571,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT для таблицы `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
