@@ -58,6 +58,10 @@ class Filter{
      */
     protected function getHtml(){
         ob_start();
+        $filter = self::getFilter();//получаем строку фильтров через запятую
+        if(!empty($filter)){
+            $filter = explode(',', $filter);//в $filter получаем массив фильтров, разбитых по запятой
+        }
         require $this->tpl;
         return ob_get_clean();
     }
@@ -83,6 +87,9 @@ class Filter{
         return $attrs;
     }
 
+    /**
+     * метод возвращает строку с фильтрами
+     */
     public static function getFilter(){
         $filter = null;
         if(!empty($_GET['filter'])){

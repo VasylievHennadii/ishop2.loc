@@ -125,6 +125,10 @@ class Pagination {
      */
     public function getParams(){
         $url = $_SERVER['REQUEST_URI']; // "/category/men?page=2&sort=name"
+        preg_match_all("#filter=[\d,&]#", $url, $matches);
+        if(count($matches[0]) > 1){
+            $url = preg_replace("#filter=[\d,&]+#", "", $url, 1);
+        }
         $url = explode('?', $url); //  Array ([0] => /category/men  [1] => page=2&sort=name)
         $uri = $url[0] . '?'; //  "/category/men?"
         if(isset($url[1]) && $url[1] != ''){
