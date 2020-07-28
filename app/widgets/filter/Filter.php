@@ -45,7 +45,7 @@ class Filter{
 
         //если атрибутов нет в кеше, то получаем из БД и кешируем
         if(!$this->attrs){
-            $this->attrs = $this->getAttrs();
+            $this->attrs = self::getAttrs();
             $cache->set('filter_attrs', $this->attrs, 30);
         }
         $filters = $this->getHtml();
@@ -78,7 +78,7 @@ class Filter{
     /**
      * метод получает атрибуты из БД
      */
-    protected function getAttrs(){
+    protected static function getAttrs(){
         $data = \R::getAssoc('SELECT * FROM attribute_value');
         $attrs = [];
         foreach($data as $k => $v){
@@ -97,6 +97,28 @@ class Filter{
             $filter = trim($filter, ',');
         }
         return $filter;
+    }
+
+    /**
+     * метод для фильтрации по группам
+     */
+    public static function getCountGroups($filter){
+        $filters = explode(',', $filter);
+        $cache = Cache::instance();
+        $attrs = $cache->get('filter_attrs');
+        if(!$attrs){
+            $attrs = self::getAttrs();
+        }
+        $data = [];
+        foreach($attrs as $key => $item){
+            foreach($item as $k => $v){
+                if(in_array($k, $filters)){
+                    $data[] = $key;
+                break;
+                }
+            }
+        }
+        return count($data);               
     }
 
 
