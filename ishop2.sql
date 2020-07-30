@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Июл 26 2020 г., 13:04
+-- Время создания: Июл 30 2020 г., 23:18
 -- Версия сервера: 10.3.13-MariaDB-log
 -- Версия PHP: 7.1.32
 
@@ -409,7 +409,8 @@ INSERT INTO `user` (`id`, `login`, `password`, `email`, `name`, `address`, `role
 (19, 'user4', '$2y$10$J7L/MkOn9BMpWfDosohRg.T.o7l4kQU9Y0QcCTPD3FjzBimt3HJuK', '4@1.com', 'User1', '111', 'user'),
 (20, 'user1', '$2y$10$FB2L/vdF7oc8Uhx7Ohyk8e76NKQYNZE3mTnx4fznqBluuc0IuQIi2', '1@1.com', 'User1', '111', 'user'),
 (21, 'user5', '$2y$10$R0fuKctHMdlnuymcfozMWeFMGeZNZPH9H4nQBwn6u403b7.7mcTd2', '5@1.com', 'User5', '555', 'user'),
-(22, 'olha', '$2y$10$QSCBU9hjyNQkra5xurBMFutmxS5u8v/REVFXk/9vg0e8cMFwkuScq', 'felixmagnificent@gmail.com', 'Olha Vasylieva', 'Kharkiv', 'user');
+(22, 'olha', '$2y$10$QSCBU9hjyNQkra5xurBMFutmxS5u8v/REVFXk/9vg0e8cMFwkuScq', 'felixmagnificent@gmail.com', 'Olha Vasylieva', 'Kharkiv', 'user'),
+(23, 'admin', '$2y$10$Kre.0aoO2OQ7f8wpuSoo8.vOlR0d8MT3pJFNyCPCDa//LR7ksCwh2', 'admin@ishop2.loc', 'Admin', 'Kharkiv', 'admin');
 
 --
 -- Индексы сохранённых таблиц
@@ -571,7 +572,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT для таблицы `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц

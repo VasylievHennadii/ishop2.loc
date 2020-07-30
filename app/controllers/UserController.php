@@ -5,7 +5,7 @@ namespace app\controllers;
 use app\models\User;
 
 /**
- * контроллер для регистрации и входа в аккаунт
+ * контроллер для регистрации и входа в аккаунт User
  */
 class UserController extends AppController {
 
