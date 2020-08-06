@@ -26,6 +26,9 @@ class OrderController extends AppController{
         $this->set(compact('orders', 'pagination', 'count'));
     }
 
+    /**
+     * метод для работы с заказами в админке
+     */
     public function viewAction(){
         $order_id = $this->getRequestID();//получаем id
 
@@ -35,7 +38,7 @@ class OrderController extends AppController{
         JOIN `order_product` ON `order`.`id` = `order_product`.`order_id`
         WHERE `order`.`id` = ?
         GROUP BY `order`.`id` ORDER BY `order`.`status`, `order`.`id` LIMIT 1", [$order_id]);
-        if(!$order_id){
+        if(!$order){
             throw new \Exception('Страница не найдена', 404);
         }
 
@@ -44,6 +47,36 @@ class OrderController extends AppController{
         $this->setMeta("Заказ №{$order_id}");
         $this->set(compact('order', 'order_products'));
     }
+
+    /**
+     * метод для изменения заказа(статуса, даты) в админке
+     */
+    public function changeAction(){
+        $order_id = $this->getRequestID();
+        $status = !empty($_GET['status']) ? '1' : '0';        
+        $order = \R::load('order', $order_id);
+        if(!$order){
+            throw new \Exception('Страница не найдена', 404);
+        }
+        $order->status = $status;
+        $order->update_at = date("Y-m-d H:i:s");
+        \R::store($order);
+        $_SESSION['success'] = 'Изменения сохранены';
+        redirect();
+    }
+
+    /**
+     * метод для удаления заказа в админке
+     */
+    public function deleteAction(){
+        $order_id = $this->getRequestID();
+        $order = \R::load('order', $order_id);
+        \R::trash($order);
+        $_SESSION['success'] = 'Заказ удален';
+        redirect(ADMIN . '/order');
+    }
+
+
 
 }
 

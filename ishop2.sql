@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Июл 30 2020 г., 23:18
+-- Время создания: Авг 07 2020 г., 00:04
 -- Версия сервера: 10.3.13-MariaDB-log
 -- Версия PHP: 7.1.32
 
@@ -271,7 +271,17 @@ CREATE TABLE `order` (
 
 INSERT INTO `order` (`id`, `user_id`, `status`, `date`, `update_at`, `currency`, `note`) VALUES
 (4, 22, '0', '2020-07-21 18:48:00', NULL, 'USD', 'Ваш заказ прибудет 22-07-2020. Ожидайте SMS по прибытии заказа.'),
-(5, 22, '0', '2020-07-21 19:14:15', NULL, 'UAH', '');
+(5, 22, '0', '2020-07-21 19:14:15', NULL, 'UAH', ''),
+(6, 20, '0', '2020-08-06 19:07:51', NULL, 'USD', ''),
+(7, 20, '0', '2020-08-06 19:08:15', NULL, 'USD', ''),
+(8, 20, '0', '2020-08-06 19:09:00', NULL, 'USD', ''),
+(9, 20, '0', '2020-08-06 19:09:17', NULL, 'USD', ''),
+(10, 20, '0', '2020-08-06 19:09:36', NULL, 'USD', ''),
+(11, 20, '0', '2020-08-06 19:09:56', NULL, 'USD', ''),
+(12, 20, '0', '2020-08-06 19:10:12', NULL, 'USD', ''),
+(13, 20, '0', '2020-08-06 19:10:30', NULL, 'USD', ''),
+(14, 20, '0', '2020-08-06 19:11:16', NULL, 'USD', ''),
+(15, 20, '0', '2020-08-06 19:11:48', NULL, 'USD', '');
 
 -- --------------------------------------------------------
 
@@ -298,7 +308,17 @@ INSERT INTO `order_product` (`id`, `order_id`, `product_id`, `qty`, `title`, `pr
 (7, 4, 3, 3, 'Casio GA-1000-1AER', 400),
 (8, 4, 1, 2, 'Casio MRP-700-1AVEF (Dark Black)', 305),
 (9, 5, 1, 1, 'Casio MRP-700-1AVEF', 7740),
-(10, 5, 2, 1, 'Casio MQ-24-7BUL', 1806);
+(10, 5, 2, 1, 'Casio MQ-24-7BUL', 1806),
+(11, 6, 1, 1, 'Casio MRP-700-1AVEF', 300),
+(12, 7, 2, 1, 'Casio MQ-24-7BUL', 70),
+(13, 8, 3, 1, 'Casio GA-1000-1AER', 400),
+(14, 9, 4, 1, 'Citizen JP1010-00E', 400),
+(15, 10, 5, 1, 'Citizen BJ2111-08E', 500),
+(16, 11, 6, 1, 'Citizen AT0696-59E', 350),
+(17, 12, 7, 1, 'Q&Q Q956J302Y', 20),
+(18, 13, 8, 1, 'Royal London 41040-01', 90),
+(19, 14, 1, 2, 'Casio MRP-700-1AVEF (Dark Black)', 305),
+(20, 15, 1, 4, 'Casio MRP-700-1AVEF (Red)', 310);
 
 -- --------------------------------------------------------
 
@@ -554,13 +574,13 @@ ALTER TABLE `modification`
 -- AUTO_INCREMENT для таблицы `order`
 --
 ALTER TABLE `order`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT для таблицы `order_product`
 --
 ALTER TABLE `order_product`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT для таблицы `product`
