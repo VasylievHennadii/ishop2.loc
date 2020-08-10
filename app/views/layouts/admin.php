@@ -582,7 +582,7 @@
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
-<script src="my.js"></script>
+<script src="/public/adminlte/my.js"></script>
 
 <?php
 $logs = \R::getDatabaseAdapter()
