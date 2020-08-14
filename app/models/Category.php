@@ -9,6 +9,23 @@ use ishop\App;
  */
 class Category extends AppModel {
 
+    public $attributes = [
+        'title' => '',
+        'parent_id' => '',
+        'keywords' => '',
+        'description' => '',
+        'alias' => '',
+    ];
+
+    /**
+     * правило для вaлидации
+     */
+    public $rules = [
+        'required' => [
+            ['title'],
+        ]
+    ];
+
     /**
      * метод для получения id всех вложенных категорий
      */
