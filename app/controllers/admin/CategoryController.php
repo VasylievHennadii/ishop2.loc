@@ -4,6 +4,7 @@ namespace app\controllers\admin;
 
 use app\models\AppModel;
 use app\models\Category;
+use ishop\App;
 
 class CategoryController extends AppController {
 
@@ -57,6 +58,35 @@ class CategoryController extends AppController {
             redirect();
         }
         $this->setMeta('Новая категория');
+    }
+
+    /**
+     * метод для редактирования категорий
+     */
+    public function editAction(){
+        if(!empty($_POST)){
+            $id = $this->getRequestID(false);//берем id из POST
+            $category = new Category();
+            $data = $_POST;
+            $category->load($data);
+            if(!$category->validate($data)){
+                $category->getErrors();
+                redirect();
+            }
+            if($category->update('category', $id)){
+                $alias = AppModel::createAlias('category', 'alias', $data['title'], $id);
+                $category = \R::load('category', $id);
+                $category->alias = $alias;
+                \R::store($category);
+                $_SESSION['success'] = 'Изменения в категории сохранены';
+            }
+            redirect();
+        }
+        $id = $this->getRequestID();//берем id из GET
+        $category = \R::load('category', $id);
+        App::$app->setProperty('parent_id', $category->parent_id);
+        $this->setMeta("Редактирование категории {$category->title}");
+        $this->set(compact('category'));
     }
 
 }

@@ -56,6 +56,17 @@ abstract class Model {
         return \R::store($tbl);
     }
 
+    /**
+     * метод обновления данных в таблице
+     */
+    public function update($table, $id){
+        $bean = \R::load($table, $id);
+        foreach($this->attributes as $name => $value){
+            $bean->$name = $value;
+        }
+        return \R::store($bean);
+    }
+
 
     /**
      * метод валидации с помощью плагина валидации vlucas\valitron

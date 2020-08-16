@@ -1,12 +1,12 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        Список категорий
+        Редактирование категории <?=$category->title;?>
     </h1>
     <ol class="breadcrumb">
         <li><a href="<?=ADMIN;?>"><i class="fa fa-dashboard"></i> Главная</a></li>
         <li><a href="<?=ADMIN;?>/category">Список категорий</a></li>
-        <li class="active">Новая категория</li>
+        <li class="active"><?=$category->title;?></li>
     </ol>
 </section>
 
@@ -15,12 +15,12 @@
     <div class="row">        
         <div class="col-md-12">
             <div class="box">                
-                <form action="<?=ADMIN;?>/category/add" method="POST" data-toggle="validator">
+                <form action="<?=ADMIN;?>/category/edit" method="POST" data-toggle="validator">
                     <div class="box-body">
                         <div class="form-group has-feedback">
                             <label for="title">Наименование категории</label>
                             <input type="text" name="title" class="form-control" id="title" 
-                            placeholder="Наименование категории" required>
+                            placeholder="Наименование категории" value="<?=h($category->title);?>" required>
                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                         </div>
                         <div class="form-group">
@@ -41,18 +41,19 @@
                         <div class="form-group">
                             <label for="keywords">Ключевые слова</label>
                             <input type="text" name="keywords" class="form-control" id="keywords" 
-                            placeholder="Ключевые слова">
+                            placeholder="Ключевые слова" value="<?=h($category->keywords);?>">
                             <!-- <span class="glyphicon form-control-feedback" aria-hidden="true"></span> -->
                         </div>
                         <div class="form-group">
                             <label for="description">Описание</label>
                             <input type="text" name="description" class="form-control" id="description" 
-                            placeholder="Описание">
+                            placeholder="Описание" value="<?=h($category->description);?>">
                             <!-- <span class="glyphicon form-control-feedback" aria-hidden="true"></span> -->
                         </div>
                     </div>
                     <div class="box-footer">
-                        <button type="submit" class="btn btn-success">Добавить</button>
+                        <input type="hidden" name="id" value="<?=$category->id;?>">
+                        <button type="submit" class="btn btn-success">Сохранить</button>
                     </div>
                 </form>                            
             </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Авг 07 2020 г., 00:04
+-- Время создания: Авг 16 2020 г., 23:07
 -- Версия сервера: 10.3.13-MariaDB-log
 -- Версия PHP: 7.1.32
 
@@ -176,7 +176,9 @@ INSERT INTO `category` (`id`, `title`, `alias`, `parent_id`, `keywords`, `descri
 (11, 'Электронные', 'elektronnye-11', 2, 'Электронные', 'Электронные'),
 (12, 'Механические', 'mehanicheskie-12', 2, 'Механические', 'Механические'),
 (13, 'Adriatica', 'adriatica', 11, 'Adriatica', 'Adriatica'),
-(14, 'Anne Klein', 'anne-klein', 12, 'Anne Klein', 'Anne Klein');
+(14, 'Anne Klein', 'anne-klein', 12, 'Anne Klein', 'Anne Klein'),
+(20, 'Тестовая категория', 'testovaya-kategoriya', 3, '111', '222'),
+(21, 'Тестовая категория 2', 'testovaya-kategoriya-2', 20, '222-2', '222-2');
 
 -- --------------------------------------------------------
 
@@ -270,8 +272,8 @@ CREATE TABLE `order` (
 --
 
 INSERT INTO `order` (`id`, `user_id`, `status`, `date`, `update_at`, `currency`, `note`) VALUES
-(4, 22, '0', '2020-07-21 18:48:00', NULL, 'USD', 'Ваш заказ прибудет 22-07-2020. Ожидайте SMS по прибытии заказа.'),
-(5, 22, '0', '2020-07-21 19:14:15', NULL, 'UAH', ''),
+(4, 22, '1', '2020-07-21 18:48:00', '2020-08-06 22:40:29', 'USD', 'Ваш заказ прибудет 22-07-2020. Ожидайте SMS по прибытии заказа.'),
+(5, 22, '0', '2020-07-21 19:14:15', '2020-08-06 22:07:07', 'UAH', ''),
 (6, 20, '0', '2020-08-06 19:07:51', NULL, 'USD', ''),
 (7, 20, '0', '2020-08-06 19:08:15', NULL, 'USD', ''),
 (8, 20, '0', '2020-08-06 19:09:00', NULL, 'USD', ''),
@@ -279,9 +281,7 @@ INSERT INTO `order` (`id`, `user_id`, `status`, `date`, `update_at`, `currency`,
 (10, 20, '0', '2020-08-06 19:09:36', NULL, 'USD', ''),
 (11, 20, '0', '2020-08-06 19:09:56', NULL, 'USD', ''),
 (12, 20, '0', '2020-08-06 19:10:12', NULL, 'USD', ''),
-(13, 20, '0', '2020-08-06 19:10:30', NULL, 'USD', ''),
-(14, 20, '0', '2020-08-06 19:11:16', NULL, 'USD', ''),
-(15, 20, '0', '2020-08-06 19:11:48', NULL, 'USD', '');
+(13, 20, '0', '2020-08-06 19:10:30', NULL, 'USD', '');
 
 -- --------------------------------------------------------
 
@@ -316,9 +316,7 @@ INSERT INTO `order_product` (`id`, `order_id`, `product_id`, `qty`, `title`, `pr
 (15, 10, 5, 1, 'Citizen BJ2111-08E', 500),
 (16, 11, 6, 1, 'Citizen AT0696-59E', 350),
 (17, 12, 7, 1, 'Q&Q Q956J302Y', 20),
-(18, 13, 8, 1, 'Royal London 41040-01', 90),
-(19, 14, 1, 2, 'Casio MRP-700-1AVEF (Dark Black)', 305),
-(20, 15, 1, 4, 'Casio MRP-700-1AVEF (Red)', 310);
+(18, 13, 8, 1, 'Royal London 41040-01', 90);
 
 -- --------------------------------------------------------
 
@@ -550,7 +548,7 @@ ALTER TABLE `brand`
 -- AUTO_INCREMENT для таблицы `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT для таблицы `currency`
