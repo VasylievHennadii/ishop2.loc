@@ -26,7 +26,15 @@ class UserController extends AppController {
 
 
     /**
-     * метод для редактирования пользователей
+     * метод для добавления нового пользователя из Admin
+     */
+    public function addAction(){
+        $this->setMeta('Новый пользователь');
+    }
+
+
+    /**
+     * метод для редактирования пользователей в Admin
      */
     public function editAction(){
         if(!empty($_POST)){
