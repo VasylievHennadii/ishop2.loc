@@ -6,6 +6,9 @@ use app\models\AppModel;
 use app\models\Category;
 use ishop\App;
 
+/**
+ * контроллер для управления категориями из Admin
+ */
 class CategoryController extends AppController {
 
     public function indexAction(){

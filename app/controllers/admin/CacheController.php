@@ -4,6 +4,9 @@ namespace app\controllers\admin;
 
 use ishop\Cache;
 
+/**
+ * контроллер для управления кешем из Admin
+ */
 class CacheController extends AppController {
 
     public function indexAction(){
