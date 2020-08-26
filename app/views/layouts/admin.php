@@ -584,7 +584,9 @@
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
 <script src="/public/adminlte/bower_components/ckeditor/ckeditor.js"></script>
+<script src="/public/adminlte/bower_components/ckeditor/adapters/jquery.js"></script>
 <script src="my.js"></script>
+
 
 <?php
 $logs = \R::getDatabaseAdapter()

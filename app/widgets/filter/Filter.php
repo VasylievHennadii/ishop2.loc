@@ -24,8 +24,14 @@ class Filter{
      */
     public $tpl;
 
-    public function __construct() {
-        $this->tpl = __DIR__ . '/filter_tpl.php';
+    /**
+     * массив опций конкретного товара для редактирования, который достаем из БД 
+     */
+    public $filter;
+
+    public function __construct($filter = null, $tpl = '') {
+        $this->filter = $filter;
+        $this->tpl = $tpl ? $tpl : __DIR__ . '/filter_tpl.php';
         $this->run();
     }
 

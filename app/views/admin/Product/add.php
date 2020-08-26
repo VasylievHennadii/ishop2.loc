@@ -60,8 +60,8 @@
                         </div>
 
                         <div class="form-group has-feedback">
-                            <label for="old_price">Цена</label>
-                            <input type="text" name="old_price" class="form-control" id="description" placeholder="Старая цена" pattern="^[0-9.]{1,}$" value="<?php isset($_SESSION['form_data']['old_price']) ? h($_SESSION['form_data']['old_price']) : null; ?>" required data-error="Допускаются цифры и десятичная точка">
+                            <label for="old_price">Старая цена</label>
+                            <input type="text" name="old_price" class="form-control" id="old_price" placeholder="Введите 0 или другую цену" pattern="^[0-9.]{1,}$" value="<?php isset($_SESSION['form_data']['old_price']) ? h($_SESSION['form_data']['old_price']) : null; ?>" required data-error="Допускаются цифры и десятичная точка">
                             <div class="help-block with-errors"></div>
                         </div>
 
@@ -80,7 +80,9 @@
                             <label>
                                 <input type="checkbox" name="hit"> Хит
                             </label>                                          
-                        </div>        
+                        </div>  
+                        
+                        <?php new \app\widgets\filter\Filter(null, WWW . '/filter/admin_filter_tpl.php');  ?>
 
                     </div>
                     <div class="box-footer">
