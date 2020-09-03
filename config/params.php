@@ -13,4 +13,8 @@ return [
     'smtp_protocol' => 'ssl',
     'smtp_login' => 'petpolimer@ukr.net',
     'smtp_password' => 'EbmV3tF4JjgQu59s',
+    'img_width' => 125,
+    'img_height' => 200,
+    'gallery_width' => 700,
+    'gallery_height' => 1000,
 ];
