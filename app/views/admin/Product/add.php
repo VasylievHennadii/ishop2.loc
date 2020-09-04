@@ -90,6 +90,7 @@
                         <?php new \app\widgets\filter\Filter(null, WWW . '/filter/admin_filter_tpl.php');  ?>
 
                         <!--https://dcrazed.com/html5-jquery-file-upload-scripts/-->
+                        
                         <div class="form-group">
                             <div class="col-md-4">
                                 <div class="box box-danger box-solid file-upload">
