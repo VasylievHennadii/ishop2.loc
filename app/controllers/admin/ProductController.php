@@ -27,7 +27,7 @@ class ProductController extends AppController {
     }
 
     /**
-     * 
+     * метод для добавления картинок из Admin
      */
     public function addImageAction(){
         if(isset($_GET['upload'])){
@@ -42,6 +42,24 @@ class ProductController extends AppController {
             $product = new Product();
             $product->uploadImg($name, $wmax, $hmax);
         }
+    }
+
+    /**
+     * метод редактирования товаров из Admin
+     */
+    public function editAction(){
+        if(!empty($_POST)){
+
+        }
+        $id = $this->getRequestID();
+        $product = \R::load('product', $id);
+        App::$app->setProperty('parent_id', $product->category_id);
+        $filter = \R::getCol('SELECT attr_id FROM attribute_product WHERE product_id = ?', [$id]);
+        $related_product = \R::getAll("SELECT related_product.related_id, product.title FROM related_product 
+        JOIN product ON product.id = related_product.related_id WHERE related_product.product_id = ?", [$id]);
+        $gallery = \R::getCol('SELECT img FROM gallery WHERE product_id = ?', [$id]);
+        $this->setMeta("Редактирование товара {$product->title}");
+        $this->set(compact('product', 'filter', 'related_product', 'gallery'));
     }
 
     /**
