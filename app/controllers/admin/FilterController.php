@@ -2,6 +2,7 @@
 
 namespace app\controllers\admin;
 
+use app\models\admin\FilterAttr;
 use app\models\admin\FilterGroup;
 
 /**
@@ -22,6 +23,28 @@ class FilterController extends AppController {
         \R::exec('DELETE FROM attribute_group WHERE id = ?', [$id]);
         $_SESSION['success'] = 'Удалено';
         redirect();
+    }
+
+    /**
+     * метод для добавления атрибутов фильтров
+     */
+    public function attributeAddAction(){
+        if(!empty($_POST)){
+            $attr = new FilterAttr();
+            $data = $_POST;
+            $attr->load($data);
+            if(!$attr->validate($data)){
+                $attr->getErrors();
+                redirect();
+            }
+            if($attr->save('attribute_value', false)){
+                $_SESSION['success'] = 'Атрибут добавлен';
+                redirect();
+            }
+        }
+        $group = \R::findAll('attribute_group');
+        $this->setMeta('Новый фильтр');
+        $this->set(compact('group'));
     }
 
     /**
@@ -57,7 +80,9 @@ class FilterController extends AppController {
      * метод отвечает за работу с атрибутами фильтров
      */
     public function attributeAction(){
-
+        $attrs = \R::getAssoc("SELECT attribute_value.*, attribute_group.title FROM attribute_value JOIN attribute_group ON attribute_group.id = attribute_value.attr_group_id");
+        $this->setMeta('Фильтры');
+        $this->set(compact('attrs'));
     }
 
 }
