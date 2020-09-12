@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Авг 22 2020 г., 23:44
+-- Время создания: Сен 12 2020 г., 23:39
 -- Версия сервера: 10.3.13-MariaDB-log
 -- Версия PHP: 7.1.32
 
@@ -63,23 +63,35 @@ INSERT INTO `attribute_product` (`attr_id`, `product_id`) VALUES
 (1, 1),
 (1, 2),
 (1, 3),
+(1, 42),
+(1, 43),
+(1, 44),
 (2, 4),
 (5, 1),
 (5, 2),
 (5, 3),
 (5, 4),
+(5, 42),
+(5, 43),
+(5, 44),
 (8, 1),
 (8, 2),
 (8, 3),
 (8, 4),
+(8, 42),
+(8, 43),
 (12, 1),
 (12, 2),
 (12, 3),
 (12, 4),
+(12, 42),
+(12, 43),
 (18, 1),
 (18, 2),
 (18, 4),
-(19, 3);
+(18, 42),
+(19, 3),
+(19, 43);
 
 -- --------------------------------------------------------
 
@@ -203,7 +215,8 @@ CREATE TABLE `currency` (
 INSERT INTO `currency` (`id`, `title`, `code`, `symbol_left`, `symbol_right`, `value`, `base`) VALUES
 (1, 'гривна', 'UAH', '', ' грн.', 25.80, '0'),
 (2, 'доллар', 'USD', '$ ', '', 1.00, '1'),
-(3, 'Евро', 'EUR', '€ ', '', 0.88, '0');
+(3, 'Евро', 'EUR', '€ ', '', 0.88, '0'),
+(5, 'Рубль', 'RUB', '', 'руб.', 68.00, '0');
 
 -- --------------------------------------------------------
 
@@ -224,7 +237,9 @@ CREATE TABLE `gallery` (
 INSERT INTO `gallery` (`id`, `product_id`, `img`) VALUES
 (1, 2, 's-1.jpg'),
 (2, 2, 's-2.jpg'),
-(3, 2, 's-3.jpg');
+(3, 2, 's-3.jpg'),
+(6, 44, 'dc3ff4d583ff5bfb1acd7a6c12f49858.jpg'),
+(7, 44, '8b952c9afca24ee536e9d2cbf4627f94.jpg');
 
 -- --------------------------------------------------------
 
@@ -344,9 +359,9 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `category_id`, `title`, `alias`, `content`, `price`, `old_price`, `status`, `keywords`, `description`, `img`, `hit`) VALUES
-(1, 6, 'Casio MRP-700-1AVEF', 'casio-mrp-700-1avef', NULL, 300, 0, '1', NULL, NULL, 'p-1.png', '1'),
+(1, 6, 'Casio MRP-700-1AVEF', 'casio-mrp-700-1avef', '', 300, 0, '1', '', '', 'p-1.png', '1'),
 (2, 6, 'Casio MQ-24-7BUL', 'casio-mq-24-7bul', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique, diam in consequat iaculis, est purus iaculis mauris, imperdiet facilisis ante ligula at nulla. Quisque volutpat nulla risus, id maximus ex aliquet ut. Suspendisse potenti. Nulla varius lectus id turpis dignissim porta. Quisque magna arcu, blandit quis felis vehicula, feugiat gravida diam. Nullam nec turpis ligula. Aliquam quis blandit elit, ac sodales nisl. Aliquam eget dolor eget elit malesuada aliquet. In varius lorem lorem, semper bibendum lectus lobortis ac.</p>\n\n                                            <p>Mauris placerat vitae lorem gravida viverra. Mauris in fringilla ex. Nulla facilisi. Etiam scelerisque tincidunt quam facilisis lobortis. In malesuada pulvinar neque a consectetur. Nunc aliquam gravida purus, non malesuada sem accumsan in. Morbi vel sodales libero.</p>', 70, 80, '1', '111', '222', 'p-2.png', '1'),
-(3, 6, 'Casio GA-1000-1AER', 'casio-ga-1000-1aer', NULL, 400, 0, '1', NULL, NULL, 'p-3.png', '1'),
+(3, 6, 'Casio GA-1000-1AER', 'casio-ga-1000-1aer', '', 400, 0, '1', '', '', 'p-3.png', '1'),
 (4, 6, 'Citizen JP1010-00E', 'citizen-jp1010-00e', NULL, 400, 0, '1', NULL, NULL, 'p-4.png', '1'),
 (5, 7, 'Citizen BJ2111-08E', 'citizen-bj2111-08e', NULL, 500, 0, '1', NULL, NULL, 'p-5.png', '1'),
 (6, 7, 'Citizen AT0696-59E', 'citizen-at0696-59e', NULL, 350, 355, '1', NULL, NULL, 'p-6.png', '1'),
@@ -375,7 +390,12 @@ INSERT INTO `product` (`id`, `category_id`, `title`, `alias`, `content`, `price`
 (31, 7, 'Часы 18', 'chasy-18', NULL, 125, 0, '1', NULL, NULL, 'no_image.jpg', '0'),
 (32, 7, 'Часы 19', 'chasy-19', NULL, 125, 0, '1', NULL, NULL, 'no_image.jpg', '0'),
 (33, 7, 'Часы 20', 'chasy-20', NULL, 125, 0, '1', NULL, NULL, 'no_image.jpg', '0'),
-(34, 21, 'Новый товар 1', '', '111222', 100, 110, '1', '111', '222', 'no_image.jpg', '1');
+(35, 21, 'Новый товар 1', 'novyy-tovar-1', '<p>Thisis my <em>textarea</em> to be replaced with <strong>CKEditor</strong>.</p>\r\n', 100, 0, '1', '', '', 'no_image.jpg', '0'),
+(39, 21, 'Новый товар 1', 'novyy-tovar-1-39', '', 100, 0, '1', '', '', 'no_image.jpg', '0'),
+(41, 21, 'Новый товар 2', 'novyy-tovar-2', '<p><img alt=\"\" src=\"/public/upload/images/1/p-1.png\" style=\"float:left; height:200px; width:125px\" />TEST</p>\r\n', 101, 0, '1', '', '', 'no_image.jpg', '0'),
+(42, 21, 'Новый товар 3', 'novyy-tovar-3', '', 1011, 0, '1', '', '', 'no_image.jpg', '0'),
+(43, 21, 'Новый товар 4', 'novyy-tovar-4', '<p>Thisis my <em>textarea</em> to be replaced with <strong>CKEditor</strong>.</p>', 101, 110, '1', '', '', 'no_image.jpg', '0'),
+(44, 21, 'Новый 5', 'novyy-5', '', 888, 0, '1', '', '', '45c1a11a15330e6e0b386ef8c2ded268.png', '0');
 
 -- --------------------------------------------------------
 
@@ -399,7 +419,17 @@ INSERT INTO `related_product` (`product_id`, `related_id`) VALUES
 (2, 10),
 (5, 1),
 (5, 7),
-(5, 8);
+(5, 8),
+(43, 1),
+(43, 2),
+(43, 3),
+(43, 4),
+(43, 5),
+(43, 6),
+(43, 8),
+(43, 12),
+(44, 6),
+(44, 17);
 
 -- --------------------------------------------------------
 
@@ -531,13 +561,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT для таблицы `attribute_group`
 --
 ALTER TABLE `attribute_group`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT для таблицы `attribute_value`
 --
 ALTER TABLE `attribute_value`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT для таблицы `brand`
@@ -555,13 +585,13 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT для таблицы `currency`
 --
 ALTER TABLE `currency`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT для таблицы `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT для таблицы `modification`
@@ -585,7 +615,7 @@ ALTER TABLE `order_product`
 -- AUTO_INCREMENT для таблицы `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT для таблицы `user`
